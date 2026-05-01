@@ -5,12 +5,6 @@ services:
     ports:
       - "6080:6080"
     volumes:
-      # Named volume persists .tmd files across container restarts.
-      # To use a host directory instead, replace with:
-      #   - /your/host/path:/files
-      - treemaker-files:/files
+      - ./files:/files
     shm_size: "256m"
     restart: unless-stopped
-
-volumes:
-  treemaker-files:
